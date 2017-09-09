@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/template" id="student-template">
+          <tr>
+              <td><input class="student-item" value="${this.NO}" type="checkbox"></td>
+              <td>${this.name}</td>
+              <td>${this.age}</td>
+              <td>${this.className}</td>
+              <td>${this.NO}</td>
+          </tr>
+    </script>
+</head>
+<body>
+    <div id="root" class="container">
+        <div class="btn-container">
+            <a id="add" href="javascript:void 0">Add</a>
+            <a id="expel" href="javascript:void 0">Expel</a>
+        </div>
+        <table id="student-container">
+            <thead>
+                <tr>
+                    <td><input id="selectAll" type="checkbox"></td>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Class</td>
+                    <td>NO.</td>
+                </tr>
+            </thead>
+            <tbody id="student-container">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
