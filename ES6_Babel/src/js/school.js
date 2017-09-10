@@ -13,14 +13,15 @@ class School {
         ];
         students.forEach(student => {
             this.addStudents(student)
-            $("#student-container").append(student.createRow());
         });
     }
     addStudents(student) {
         this.students.push(student);
+        $("#student-body-container").append(student.createRow());
     }
     expelStudents(NO) {
         this.students = this.students.filter(value => value.NO == NO);
+        $(`#student-body-container [value=${NO}]`).parents('tr').remove();
     }
 }
 export default School;

@@ -1,32 +1,33 @@
 var $ = require("jquery");
-import CommonUtility from './utility.js';
-import Student from './student.js';
-import School from './school.js';
+import CommonUtility from './js/utility.js';
+import Student from './js/student.js';
+import School from './js/school.js';
+
+import './css/index.css';
 
 let school = new School();
 
-$(document).bind("click", "#add", e => {
+$(document).on("click", "#add", e => {
     let randomCode = CommonUtility.getRandomNum(10, 25);
     let student = new Student("狗蛋" + randomCode, randomCode, "201701" + randomCode, "Class" + randomCode);
     school.addStudents(student);
-}).bind("click", "#expel", e => {
+}).on("click", "#expel", e => {
     let selectItems = $(".student-item:checked");
     let table = $("#student-container");
     if (selectItems.length == 0) {
         console.log("there isn't any selected item");
     }
-    selectItems.map(itemDom => itemDom.value)
-        .forEach(NO => school.expelStudents(NO));
+    selectItems.map((i,itemDom) => itemDom.value)
+        .each((i,NO) => school.expelStudents(NO));
     selectItems.parents("tr").remove();
-}).bind("click", ".student-item", e => {
-    //todo
+}).on("click", ".student-item", e => {
     if ($(".student-item").length == $(".student-item:checked")) {
         $("#selectAll").attr("checked", true);
     } else {
         $("#selectAll").removeAttr("checked");
     }
 
-}).bind("click", "#selectAll", e => {
+}).on("click", "#selectAll", e => {
     let $this = $(e.target);
     if ($this.attr("checked")) {
         $(".student-item").attr("checked", true);
@@ -34,3 +35,8 @@ $(document).bind("click", "#add", e => {
         $(".student-item").removeAttr("checked");
     }
 });
+if(module.hot){
+    module.hot.accept('./index.js',()=>{
+        console.log("update");
+    });
+}
