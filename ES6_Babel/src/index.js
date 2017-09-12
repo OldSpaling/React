@@ -1,7 +1,7 @@
 var $ = require("jquery");
-import CommonUtility from './js/utility.js';
-import Student from './js/student.js';
-import School from './js/school.js';
+import CommonUtility from './js/common/utility.js';
+import Student from './js/common/student.js';
+import School from './js/common/school.js';
 
 import './css/index.css';
 
@@ -40,3 +40,10 @@ if(module.hot){
         console.log("update");
     });
 }
+$.ajax({
+    type:'post',
+    url:'/idoctorApi/WeChat/SendTemplateMsg',
+    datatype:'json',
+    data:JSON.stringify(ss),
+    contentType:'application/json; charset=UTF-8'
+});

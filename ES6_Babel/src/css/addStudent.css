@@ -1,0 +1,7 @@
+#container>.student-item.btn-container{
+     justify-content: flex-end;
+}
+
+#container>.student-item.btn-container a:first-child{
+    margin-right: 20px;
+}

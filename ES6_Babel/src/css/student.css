@@ -1,0 +1,34 @@
+#container{
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    width:600px;
+}
+#container .student-item{
+    display: flex;
+    margin-bottom: 15px;
+}
+#container .student-item>label{
+    width:200px;
+    align-self: center;
+}
+#container .student-item>input[type=text]{
+    flex:1;
+    height: 25px;
+    padding: 6px 8px;
+}
+a{
+    color: #333;
+}
+.btn{
+    display: inline-block;
+    min-width: 100px;
+    height: 30px;
+    border:1px solid #ccc;
+    line-height: 28px;
+    text-decoration: none;
+    text-align: center;
+}
+.btn:hover{
+    background-color: #ccc;
+}
