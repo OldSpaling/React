@@ -6,7 +6,6 @@ import School from './js/common/school.js';
 import './css/index.css';
 
 let school = new School();
-
 $(document).on("click", "#add", e => {
     let randomCode = CommonUtility.getRandomNum(10, 25);
     let student = new Student("狗蛋" + randomCode, randomCode, "201701" + randomCode, "Class" + randomCode);
@@ -40,10 +39,10 @@ if(module.hot){
         console.log("update");
     });
 }
-$.ajax({
-    type:'post',
-    url:'/idoctorApi/WeChat/SendTemplateMsg',
-    datatype:'json',
-    data:JSON.stringify(ss),
-    contentType:'application/json; charset=UTF-8'
-});
+// $.ajax({
+//     type:'post',
+//     url:'/idoctorApi/WeChat/SendTemplateMsg',
+//     datatype:'json',
+//     data:JSON.stringify(ss),
+//     contentType:'application/json; charset=UTF-8'
+// });

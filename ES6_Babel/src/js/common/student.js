@@ -15,7 +15,7 @@ class Student extends Person {
         return `          
         <tr>
             <td><input class="student-item" value="${this.NO}" type="checkbox"></td>
-            <td>${this.name}</td>
+            <td><a class="link" href="viewStudent.html">${this.name}</a></td>
             <td>${this.age}</td>
             <td>${this.className}</td>
             <td>${this.NO}</td>
